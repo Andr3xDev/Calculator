@@ -33,8 +33,4 @@ public class Operations {
             return a * factorial(a - 1);
         }
     }
-
-    public int root(int a) {
-        return (int) Math.sqrt(a);
-    }
 }
