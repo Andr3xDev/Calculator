@@ -1,5 +1,7 @@
 package GUI;
 
+import Funcional.ReadInput;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -33,7 +35,9 @@ public class MainInterface {
     private JTextField ActualNum;
     private JTextField History;
 
+
     public MainInterface() {
+
         button1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -183,6 +187,14 @@ public class MainInterface {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 ActualNum.setText("");
+            }
+        });
+
+        buttonEq.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                ActualNum.setText(ReadInput.Read(ActualNum.getText()));
             }
         });
     }
