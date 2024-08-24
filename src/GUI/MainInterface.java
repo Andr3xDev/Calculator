@@ -197,6 +197,15 @@ public class MainInterface {
                 ActualNum.setText(ReadInput.Read(ActualNum.getText()));
             }
         });
+
+        buttonEq.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                History.setText(ActualNum.getText());
+                ActualNum.setText("");
+            }
+        });
     }
 
     private void createUIComponents() {
