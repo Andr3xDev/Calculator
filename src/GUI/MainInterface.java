@@ -194,7 +194,7 @@ public class MainInterface {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                ActualNum.setText(ReadInput.Read(ActualNum.getText()));
+                ActualNum.setText("");
             }
         });
 

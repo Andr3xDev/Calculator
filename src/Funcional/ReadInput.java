@@ -1,17 +1,23 @@
 package Funcional;
 
-import java.util.Scanner;
-
 public class ReadInput {
+    Operations op = new Operations();
 
-    public static String Read () {
+    public ReadInput() {
+    }
 
-        Scanner scanner = new Scanner(System.in);
+    public void split(String input) {
+        String[] operation = input.split("(?=[+\\-*/])|(?<=[+\\-*/])");
 
-        System.out.println("Enter expression: ");
-        String expression = scanner.nextLine();
+        for (String part : operation) {
+            System.out.println(part);
+        }
+    }
 
-        scanner.close();
-        return expression;
+    public static void main(String[] args) {
+
+        ReadInput ri = new ReadInput();
+
+        ri.split("3.3-3*2.4");
     }
 }
