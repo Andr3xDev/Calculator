@@ -5,66 +5,104 @@ import java.lang.Math;
 public class Operations {
 
     // ! documentation missing for this method
-    public double sum(double n1, double n2) {
-        return n1 + n2;
-    }
-    public int sum(int n1, int n2) {
-        return n1 + n2;
-    }
-    public double sum(double n1, int n2) {
-        return n1 + n2;
-    }
-
-    // ! documentation missing for this method
-    public double subtract(double n1, double n2) {
-        return n1 - n2;
-    }
-    public int subtract(int n1, int n2) {
-        return n1 - n2;
-    }
-    public double subtract(double n1, int n2) {
-        return n1 - n2;
-    }
-
-    // ! documentation missing for this method
-    public double multiply(double n1, double n2) {
-        return n1 * n2;
-    }
-    public int multiply(int n1, int n2) {
-        return n1 * n2;
-    }
-    public double multiply(double n1, int n2) {
-        return n1 * n2;
-    }
-
-    // ! documentation missing for this method
-    public double divide(double n1, double n2) {
-        if (n2 == 0) {
-            throw new IllegalArgumentException("Cannot divide by zero");
+    public Number sum(Number num1, Number num2) {
+        if (num1 == null || num2 == null) {
+            System.out.println("Uno de los números no es válido");
+            return null;
         }
-        return n1 / n2;
-    }
-    public int divide(int n1, int n2) {
-        if (n2 == 0) {
-            throw new IllegalArgumentException("Cannot divide by zero");
+
+        double sum = num1.doubleValue() + num2.doubleValue();
+
+        if (num1 instanceof Integer && num2 instanceof Integer) {
+            return (int) sum;
+        } else {
+            return sum;
         }
-        return n1 / n2;
-    }
-    public double divide(double n1, int n2) {
-        if (n2 == 0) {
-            throw new IllegalArgumentException("Cannot divide by zero");
-        }
-        return n1 / n2;
     }
 
-    // ! documentation missing for this method
-    public double mod(String n1, String n2) {
-        return Double.parseDouble(n1) % Double.parseDouble(n2);
+    public Number subtract(Number num1, Number num2) {
+        if (num1 == null || num2 == null) {
+            System.out.println("Uno de los números no es válido");
+            return null;
+        }
+
+        double subtract = num1.doubleValue() + num2.doubleValue();
+
+        if (num1 instanceof Integer && num2 instanceof Integer) {
+            return (int) subtract;
+        } else {
+            return subtract;
+        }
     }
 
-    // ! documentation missing for this method
-    public double power(int a, int b) {
-        return (int) Math.pow(a, b);
+    public Number multiply(Number num1, Number num2) {
+        if (num1 == null || num2 == null) {
+            System.out.println("Uno de los números no es válido");
+            return null;
+        }
+
+        double multiply = num1.doubleValue() * num2.doubleValue();
+
+        if (num1 instanceof Integer && num2 instanceof Integer) {
+            return (int) multiply;
+        } else {
+            return multiply;
+        }
+    }
+
+    public Number divide(Number num1, Number num2) {
+        if (num1 == null || num2 == null) {
+            System.out.println("Uno de los números no es válido");
+            return null;
+        }
+
+        if (num2.doubleValue() == 0) {
+            System.out.println("No se puede dividir por 0");
+            return null;
+        }
+
+        double divide = num1.doubleValue() / num2.doubleValue();
+
+        if (num1 instanceof Integer && num2 instanceof Integer) {
+            return (int) divide;
+        } else {
+            return divide;
+        }
+    }
+
+    public Number mod(Number num1, Number num2) {
+        if (num1 == null || num2 == null) {
+            System.out.println("Uno de los números no es válido");
+            return null;
+        }
+
+        if (num2.doubleValue() == 0) {
+            System.out.println("No se puede dividir por 0");
+            return null;
+        }
+
+        double mod = num1.doubleValue() % num2.doubleValue();
+
+        if (num1 instanceof Integer && num2 instanceof Integer) {
+            return (int) mod;
+        } else {
+            return mod;
+        }
+    }
+
+    public Number power(Number a, Number b) {
+        if (a == null || b == null) {
+            System.out.println("Uno de los números no es válido");
+            return null;
+        }
+
+        double power = Math.pow(a.doubleValue(), b.doubleValue());
+
+        if (a instanceof Integer && b instanceof Integer) {
+            return (int) power;
+        } else {
+            return power;
+        }
     }
 
     public int factorial(int a) {
@@ -73,16 +111,5 @@ public class Operations {
         } else {
             return a * factorial(a - 1);
         }
-    }
-
-    // Function main to test the operations
-
-    public static void main(String[] args) {
-        Operations op = new Operations();
-
-        System.out.println(op.sum(2.2,1.2));
-        System.out.println(op.subtract(2.563,-1.2));
-        System.out.println(op.multiply(2,0));
-        System.out.println(op.divide(0,2));
     }
 }
