@@ -60,11 +60,11 @@ public class ReadInput {
         if (input.length == 3 && !input[1].equals("!")) {
             return doMath(input);
         }
-        if (input[1].equals("!")) {
-            newInput = remove(input);
-            readInput(newInput);
-            return factorial(newInput);
-        }
+//        if (input[1].equals("!")) {
+//            newInput = remove(input);
+//            readInput(newInput);
+//            return factorial(newInput);
+//        }
 
         return 0;
     }
@@ -108,6 +108,5 @@ public class ReadInput {
         System.out.println("Test 3");
         String[] result3 = ri.split("(3+2)+1");
         System.out.println(section(result3));
-
     }
 }
